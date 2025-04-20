@@ -3,12 +3,12 @@ import React from 'react';
 const Projects = ({textColor}) => {
   return (
     <section>
-      <h2 className={`font-bold text-lg mb-2 ${textColor}`}>Projects</h2>
+      <h2 className={`font-bold text-xl mb-2 ${textColor}`}>Projects</h2>
       <div className="space-y-3">
         <div className="flex justify-between items-center">
           <div>
             <div className='flex justify-between items-center'>
-            <h1>
+            <h1 className={`text-lg font-bold ${textColor}`}>
             <strong>Memory Lane</strong>
             </h1>
             <a 
@@ -20,7 +20,7 @@ const Projects = ({textColor}) => {
             </a>
             </div>
 
-            <p className="text-[8px] sm:text-[11px]">Upload, search, and chat with your audio files.</p>
+            <p className="text-[8px] sm:text-[13px]">Upload, search, and chat with your audio files.</p>
           </div>
         </div>
       </div>
