@@ -1,17 +1,18 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 const SocialLinks = () => {
   const [copied, setCopied] = useState(false);
-  const email = "youremail@example.com"; 
+  const email = "aysahoo04@gmail.com";
 
   const handleCopy = (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
     navigator.clipboard.writeText(email);
     setCopied(true);
     setTimeout(() => setCopied(false), 20000);
   };
+
   return (
-    <div className="flex gap-4 mb-8 text-sm text-black">
+    <div className="flex flex-wrap gap-4 mb-8 text-xs text-black justify-center sm:justify-start">
       <a href="#" className="flex items-center gap-1 hover:underline">
         resume
       </a>
@@ -24,12 +25,14 @@ const SocialLinks = () => {
       <a href="https://www.linkedin.com/in/ayush-sahoo04/" className="flex items-center gap-1 hover:underline">
         linkedin
       </a>
-      <a href="#"
-         onClick={handleCopy}
-         className="flex items-center gap-1 hover:underline">
-         email
+      <a
+        href="#"
+        onClick={handleCopy}
+        className="flex items-center gap-1 hover:underline relative"
+      >
+        email
         {copied && (
-          <span className="absolute top-105 text-green-400 text-[10px]">
+          <span className="absolute top-full mt-1 text-green-400 text-[10px]">
             email copied!
           </span>
         )}

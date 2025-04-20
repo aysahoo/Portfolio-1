@@ -1,12 +1,35 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 
 const Footer = () => {
-  return (
-    <footer className="mt-60 text-xs flex justify-between text-gray-500">
-    <p>🌍 Last updated on April 8, 2025</p>
-    <p>📍 New Delhi, 5:16 PM</p>
-  </footer>
-  )
-}
+  const [time, setTime] = useState('');
+  const [date, setDate] = useState('');
 
-export default Footer
+  useEffect(() => {
+    const now = new Date();
+
+    const formattedDate = now.toLocaleDateString('en-IN', {
+      year: 'numeric',
+      month: 'numeric',
+      day: 'numeric',
+    });
+    setDate(formattedDate);
+
+    const options = {
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: true,
+      timeZone: 'Asia/Kolkata',
+    };
+    const formattedTime = now.toLocaleTimeString('en-IN', options);
+    setTime(formattedTime);
+  }, []);
+
+  return (
+    <footer className="mt-10 text-[10px] flex justify-between text-gray-500">
+      <p>🌍 Last updated on {date}</p>
+      <p>📍 Bhubaneswar, {time}</p>
+    </footer>
+  );
+};
+
+export default Footer;
