@@ -58,7 +58,7 @@ export default function App() {
 
   return (
     <div
-      className={`${palette.bg} min-h-screen p-10 press-start-2p-regular relative transition-colors duration-500`}
+      className={`${palette.bg} min-h-screen p-10 press-start-2p-regular relative transition-colors duration-500 overflow-y-hidden`}
     >
       {/* Color Switcher Button */}
       <motion.button
@@ -73,7 +73,7 @@ export default function App() {
       <AnimatePresence mode="wait">
         <motion.div
           key={palette.bg} // Ensures remount on palette change
-          className="max-w-xl mx-auto overflow-x-hidden"
+          className="max-w-xl mx-auto overflow-hidden"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
