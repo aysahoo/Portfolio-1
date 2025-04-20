@@ -20,7 +20,7 @@ const Projects = () => {
             </a>
             </div>
 
-            <p className="text-sm">Upload, search, and chat with your audio files.</p>
+            <p className="text-[11px]">Upload, search, and chat with your audio files.</p>
           </div>
         </div>
       </div>

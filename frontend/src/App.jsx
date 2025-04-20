@@ -38,6 +38,9 @@ export default function App() {
 
   return (
     <div className={`${palette.bg} min-h-screen p-10 press-start-2p-regular`}>
+        <button onClick={ changePalette } className="absolute bottom-[10%] right-[15%] w-8 h-8 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 backdrop-blur-md border border-white/20 shadow-lg flex items-center justify-center transition-transform transform hover:rotate-180">
+        
+        </button>
       <div className="max-w-xl mx-auto overflow-x-hidden">
         <Header textColor={palette.text} changePalette={changePalette}/>
         <Intro accentColor={palette.accent} />

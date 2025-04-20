@@ -12,7 +12,7 @@ const SocialLinks = () => {
   };
 
   return (
-    <div className="flex flex-wrap gap-4 mb-8 text-xs text-black justify-center sm:justify-start">
+    <div className="flex flex-wrap gap-4 mb-8 text-xs text-black justify-start sm:justify-start">
       <a href="#" className="flex items-center gap-1 hover:underline">
         resume
       </a>
