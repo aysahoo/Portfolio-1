@@ -64,7 +64,7 @@ export default function App() {
         onClick={changePalette}
         whileTap={{ scale: 1.3, rotate: 360 }}
         whileHover={{ scale: 1.1 }}
-        className="absolute bottom-[15%] right-[15%] w-10 h-10 text-white text-xl rounded-full bg-gradient-to-r from-purple-500 to-blue-500 backdrop-blur-md border blur-[5px] border-white/30 shadow-lg flex items-center justify-center transition-all duration-300 ease-in-out"
+        className="absolute bottom-[10%] right-[15%] w-10 h-10 text-white text-xl rounded-full bg-gradient-to-r from-purple-500 to-blue-500 backdrop-blur-md border blur-[5px] border-white/30 shadow-lg flex items-center justify-center transition-all duration-300 ease-in-out"
       >
       </motion.button>
 
