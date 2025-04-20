@@ -57,7 +57,7 @@ export default function App() {
   };
 
   return (
-    <div className={`${palette.bg} min-h-screen p-10 press-start-2p-regular relative transition-colors duration-500 overflow-hidden`}>
+    <div className={`${palette.bg} min-h-dvh p-10 press-start-2p-regular relative transition-colors duration-500 overflow-hidden`}>
 
       {/* Color Switcher Button */}
       <motion.button
