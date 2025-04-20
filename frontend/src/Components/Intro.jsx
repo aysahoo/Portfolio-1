@@ -3,7 +3,7 @@ import React from 'react';
 const Intro = ({ accentColor }) => {
   return (
     <p
-      className={`${accentColor} text-[11px] sm:text-sm md:text-base lg:text-lg mb-6`}
+      className={`${accentColor} text-[8px] sm:text-sm md:text-base lg:text-lg mb-6`}
     >
       Hey, I’m Ayush, a 20-y/o CS grad at OUTR BBSR who loves designing &
       building. I’m currently exploring the world of AI with skills of{' '}

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import Header from "./Components/Header";
 import Intro from "./Components/Intro";
 import SocialLinks from "./Components/SocialLinks";
@@ -28,6 +29,25 @@ const colorPalettes = [
   },
 ];
 
+// Animation variants
+const containerVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      staggerChildren: 0.2,
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
+
+const sectionVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
 export default function App() {
   const [palette, setPalette] = useState(colorPalettes[0]);
 
@@ -37,19 +57,50 @@ export default function App() {
   };
 
   return (
-    <div className={`${palette.bg} min-h-screen p-10 press-start-2p-regular`}>
-        <button 
-          onClick={changePalette} 
-          className="absolute bottom-[10%] right-[15%] w-8 h-8 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 backdrop-blur-md border border-white/20 shadow-lg flex items-center justify-center animate-pulse transition-transform transform hover:rotate-180 hover:scale-110 duration-300 ease-in-out"
+    <div
+      className={`${palette.bg} min-h-screen p-10 press-start-2p-regular relative transition-colors duration-500`}
+    >
+      {/* Color Switcher Button */}
+      <motion.button
+        onClick={changePalette}
+        whileTap={{ scale: 1.3, rotate: 360 }}
+        whileHover={{ scale: 1.1 }}
+        className="absolute bottom-[10%] right-[15%] w-10 h-10 text-white text-xl rounded-full bg-gradient-to-r from-purple-500 to-blue-500 backdrop-blur-md border blur-[5px] border-white/30 shadow-lg flex items-center justify-center transition-all duration-300 ease-in-out"
+      >
+      </motion.button>
+
+      {/* Content with animations */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={palette.bg} // Ensures remount on palette change
+          className="max-w-xl mx-auto overflow-x-hidden"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          exit="hidden"
+          layout
         >
-        </button>
-      <div className="max-w-xl mx-auto overflow-x-hidden">
-        <Header textColor={palette.text} />
-        <Intro accentColor={palette.accent} />
-        <SocialLinks />
-        <Projects textColor={palette.text} />
-        <Footer />
-      </div>
+          <motion.section variants={sectionVariants}>
+            <Header textColor={palette.text} />
+          </motion.section>
+
+          <motion.section variants={sectionVariants}>
+            <Intro accentColor={palette.accent} />
+          </motion.section>
+
+          <motion.section variants={sectionVariants}>
+            <SocialLinks />
+          </motion.section>
+
+          <motion.section variants={sectionVariants}>
+            <Projects textColor={palette.text} />
+          </motion.section>
+
+          <motion.section variants={sectionVariants}>
+            <Footer />
+          </motion.section>
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 }

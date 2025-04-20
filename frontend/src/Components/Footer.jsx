@@ -25,9 +25,8 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="mt-10 text-[10px] flex justify-between text-black/50">
-      <p>🌍 Last updated on {date}</p>
-      <p>📍 Bhubaneswar, {time}</p>
+    <footer className="mt-10 text-[8px] flex justify-start text-black/30">
+      <p>Bhubaneswar, {time}</p>
     </footer>
   );
 };

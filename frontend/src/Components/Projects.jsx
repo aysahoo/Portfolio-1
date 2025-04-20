@@ -20,7 +20,7 @@ const Projects = ({textColor}) => {
             </a>
             </div>
 
-            <p className="text-[11px]">Upload, search, and chat with your audio files.</p>
+            <p className="text-[8px] sm:text-[11px]">Upload, search, and chat with your audio files.</p>
           </div>
         </div>
       </div>
