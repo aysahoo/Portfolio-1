@@ -12,11 +12,11 @@ const colorPalettes = [
     text: "text-[#161619]",
     accent: "text-[#161619]",
   },
-  {
-    bg: "bg-[#777767]",
-    text: "text-[#131516]",
-    accent: "text-[#131516]",
-  },
+  // {
+  //   bg: "bg-[#777767]",
+  //   text: "text-[#131516]",
+  //   accent: "text-[#131516]",
+  // },
   {
     bg: "bg-[#ef233c]",
     text: "text-[#f3ffe1]",
@@ -49,12 +49,13 @@ const sectionVariants = {
 };
 
 export default function App() {
-  const [palette, setPalette] = useState(colorPalettes[0]);
+  const [paletteIndex, setPaletteIndex] = useState(0);
 
   const changePalette = () => {
-    const randomIndex = Math.floor(Math.random() * colorPalettes.length);
-    setPalette(colorPalettes[randomIndex]);
+    setPaletteIndex((prevIndex) => (prevIndex + 1) % colorPalettes.length);
   };
+
+  const palette = colorPalettes[paletteIndex];
 
   return (
     <div className={`${palette.bg} min-h-dvh p-10 press-start-2p-regular relative transition-colors duration-500 overflow-hidden`}>
